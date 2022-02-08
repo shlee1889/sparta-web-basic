@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      .login-title {
+        color: aliceblue;
+        width: 300px;
+        height: 200px;
+        border-radius: 30px;
+        text-align: center;
+        background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+        background-size: cover;
+        background-position: center;
+
+        padding-top: 50px;
+      }
+
+      .wrap {
+        width: 240px;
+        margin: auto;
+      }
+
+      .login-idpw {
+        display: inline-block;
+        width: 30px;
+      }
+
+      .login-input-box {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="login-title">
+        <h1>로그인 페이지</h1>
+        <p>아이디, 패스워드를 입력해주세요.</p>
+      </div>
+      <div class="login-input-box">
+        <p><span class="login-idpw">ID:</span> <input type="text" /></p>
+        <p><span class="login-idpw">PW:</span> <input type="password" /></p>
+        <button>로그인하기</button>
+      </div>
+    </div>
+  </body>
+</html>
