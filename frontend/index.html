@@ -71,6 +71,43 @@
     </style>
 
     <script>
+      $(document).ready(function () {
+        $(".card-columns").empty();
+        listing();
+      });
+
+      function listing() {
+        $.ajax({
+          type: "GET",
+          url: "http://spartacodingclub.shop/post",
+          data: {},
+          success: function (response) {
+            let { articles } = response;
+            for (let i = 0; i < articles.length; i++) {
+              let { comment, desc, image, title, url } = articles[i];
+
+              let temp_html = `<div class="card">
+                              <img
+                                class="card-img-top"
+                                src="${image}"
+                                alt="Card image cap"
+                              />
+                              <div class="card-body">
+                                <a href="${url}" class="card-title"
+                                  >${title}</a
+                                >
+                                <p class="card-text">
+                                  ${desc}
+                                </p>
+                                <p class="card-text comment">${comment}</p>
+                              </div>
+                            </div>`;
+              $(".card-columns").append(temp_html);
+            }
+          },
+        });
+      }
+
       function openclose() {
         let status = $("#posting-box").css("display");
         if (status === "block") {
