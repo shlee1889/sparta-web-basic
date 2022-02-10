@@ -30,14 +30,15 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
-
+    <!-- 구글폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Stylish&display=swap"
       rel="stylesheet"
     />
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
 
     <style>
       * {
@@ -59,14 +60,28 @@
         font-weight: bold;
       }
 
-      .form-wrap {
+      #posting-box {
         border: 3px solid black;
         border-radius: 5px;
         padding: 40px;
         width: 500px;
         margin: 0px auto 30px auto;
+        display: none;
       }
     </style>
+
+    <script>
+      function openclose() {
+        let status = $("#posting-box").css("display");
+        if (status === "block") {
+          $("#posting-box").hide();
+          $("#btn-posting-box").text("포스팅박스 열기");
+        } else if (status === "none") {
+          $("#posting-box").show();
+          $("#btn-posting-box").text("포스팅박스 닫기");
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -79,19 +94,24 @@
         </p>
         <hr class="my-4" />
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button"
+          <a
+            onclick="openclose()"
+            id="btn-posting-box"
+            class="btn btn-primary btn-lg"
+            href="#"
+            role="button"
             >포스팅박스 열기</a
           >
         </p>
       </div>
       <!-- 포스팅박스 -->
-      <div class="form-wrap">
+      <div id="posting-box" class="form-wrap">
         <div class="form-group">
-          <label for="exampleInputEmail1">아티클 URL</label>
+          <label for="article-url">아티클 URL</label>
           <input
             type="email"
             class="form-control"
-            id="exampleInputEmail1"
+            id="article-url"
             aria-describedby="emailHelp"
           />
         </div>
