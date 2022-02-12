@@ -5,13 +5,11 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 db = client.dbsparta
 
-# .: 메소드 ['key']: 딕셔너리 벨류
 # url에 직접적으로 요청하는 것이 아니라 headers라는 조건을 걸어서 간접적으로 요청함
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&date=20200303',headers=headers)
 
 soup = BeautifulSoup(data.text, 'html.parser')
-
 trs = soup.select('#old_content > table > tbody > tr')
 
 # for tr in trs:
@@ -37,5 +35,3 @@ for tr in trs:
       'star': star,
     }
     db.movies.insert_one(doc)
-
-db.users.delete_many({})
