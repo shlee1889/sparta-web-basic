@@ -1,5 +1,7 @@
 frontend/test.html
-
 test/
-
 projects/prac/.venv/
+projects/bookreview/.venv/
+projects/alonememo/.venv/
+homework/04_mall/.venv/
+projects/moviestar/.venv/
